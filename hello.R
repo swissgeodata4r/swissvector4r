@@ -18,4 +18,3 @@
 # }
 
 
-swissboundries::hello()
