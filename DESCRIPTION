@@ -1,13 +1,13 @@
-Package: swissboundries
+Package: swissboundriesR
 Type: Package
 Title: Loads the Swissboundries 3D as SF Objects
-Version: 0.1.0
+Version: 0.1.1
 Author: Nils Ratnaweera
 Maintainer: Nils Ratnaweera <rata@zhaw.ch>
 Description: This package servers to make the Swissboundries3D dataset by swisstopo 
-    available through R. When using this data, you are agreeing to the swisstopo user agreement 
-    https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienste/geodienst-gratis.html
-License: https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienste/geodienst-gratis.html
+    available through R. When using this data, you are agreeing to 
+    \href{https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienste/geodienst-gratis.html}{the swisstopo user agreement}
+License: \href{https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienste/geodienst-gratis.html}{Swisstopo User Agreement}
 Encoding: UTF-8
 LazyData: true
 Imports:
