@@ -1,6 +1,6 @@
-Package: swissboundriesR
+Package: opendata.swiss
 Type: Package
-Title: Loads the Swissboundries 3D as SF Objects
+Title: Easy access to swiss open data
 Version: 0.1.1
 Author: Nils Ratnaweera
 Maintainer: Nils Ratnaweera <rata@zhaw.ch>
