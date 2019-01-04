@@ -1,32 +1,67 @@
 
 
 require(sf)
+require(dplyr)
+
+
+################################################################################
+## Bezirk ######################################################################
+################################################################################
 
 bezirksgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_BEZIRKSGEBIET.shp") %>%
-  st_set_crs(2056)
-
+  st_set_crs(2056) %>%
+  dplyr::select(NAME,BEZIRKSNUM,KANTONSNUM,EINWOHNERZ)
 
 usethis::use_data(bezirksgebiet, overwrite = TRUE,compress = "xz")
 
+################################################################################
+## Gemeinde ####################################################################
+################################################################################
 
-hoheitsgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET.shp") %>%
-  st_set_crs(2056)
+gemeindegebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET.shp") %>%
+  st_set_crs(2056) %>%
+  filter(OBJEKTART == "Gemeindegebiet") %>%
+  group_by(NAME,BEZIRKSNUM,KANTONSNUM,BFS_NUMMER) %>%
+  summarise(
+    EINWOHNERZ = sum(EINWOHNERZ,na.rm = T),
+    GEM_FLAECH  = sum(GEM_FLAECH,na.rm = T)
+  ) %>%
+  st_zm(NULL)
 
-usethis::use_data(hoheitsgebiet, overwrite = TRUE,compress = "xz")
+
+usethis::use_data(gemeindegebiet, overwrite = TRUE,compress = "xz")
+
+################################################################################
+## Kanton ######################################################################
+################################################################################
 
 
-hoheitsgrenze <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_HOHEITSGRENZE.shp") %>%
-  st_set_crs(2056)
+kantone_meta <- readr::read_delim("data-raw/kantone_meta.csv",delim = ";")
 
-usethis::use_data(hoheitsgrenze, overwrite = TRUE,compress = "xz")
 
 kantonsgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_KANTONSGEBIET.shp") %>%
-  st_set_crs(2056)
+  st_set_crs(2056) %>%
+  dplyr::group_by(NAME,KANTONSNUM) %>%
+  summarise(
+    EINWOHNERZ = sum(EINWOHNERZ,na.rm = T),
+    KANTONSFLA = sum(KANTONSFLA,na.rm = T)
+    ) %>%
+  dplyr::left_join(kantone_meta, by = c("KANTONSNUM" = "Kantonsnummer")) %>%
+  st_zm(NULL)
+
+
 
 usethis::use_data(kantonsgebiet, overwrite = TRUE,compress = "xz")
 
+################################################################################
+## Land ########################################################################
+################################################################################
+
+
 
 landesgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_LANDESGEBIET.shp") %>%
-  st_set_crs(2056)
+  st_set_crs(2056) %>%
+  dplyr::select(NAME,EINWOHNERZ,LANDESFLAE) %>%
+  st_zm(NULL)
 
 usethis::use_data(landesgebiet, overwrite = TRUE,compress = "xz")

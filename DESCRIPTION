@@ -1,6 +1,6 @@
-Package: opendata.swiss
+Package: swissvector4r
 Type: Package
-Title: Easy access to swiss open data
+Title: Easy access to swiss vector data
 Version: 0.1.1
 Author: Nils Ratnaweera
 Maintainer: Nils Ratnaweera <rata@zhaw.ch>
@@ -11,5 +11,4 @@ License: \href{https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienst
 Encoding: UTF-8
 LazyData: true
 Imports:
-    sf
 RoxygenNote: 6.1.1
