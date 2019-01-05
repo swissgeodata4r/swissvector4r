@@ -8,7 +8,7 @@ require(dplyr)
 ## Bezirk ######################################################################
 ################################################################################
 
-bezirksgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_BEZIRKSGEBIET.shp") %>%
+bezirksgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_BEZIRKSGEBIET/swissBOUNDARIES3D_1_3_TLM_BEZIRKSGEBIET.shp") %>%
   st_set_crs(2056) %>%
   dplyr::select(NAME,BEZIRKSNUM,KANTONSNUM,EINWOHNERZ)
 
@@ -18,7 +18,7 @@ usethis::use_data(bezirksgebiet, overwrite = TRUE,compress = "xz")
 ## Gemeinde ####################################################################
 ################################################################################
 
-gemeindegebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET.shp") %>%
+gemeindegebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET/swissBOUNDARIES3D_1_3_TLM_HOHEITSGEBIET.shp") %>%
   st_set_crs(2056) %>%
   filter(OBJEKTART == "Gemeindegebiet") %>%
   group_by(NAME,BEZIRKSNUM,KANTONSNUM,BFS_NUMMER) %>%
@@ -39,7 +39,7 @@ usethis::use_data(gemeindegebiet, overwrite = TRUE,compress = "xz")
 kantone_meta <- readr::read_delim("data-raw/kantone_meta.csv",delim = ";")
 
 
-kantonsgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_KANTONSGEBIET.shp") %>%
+kantonsgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_KANTONSGEBIET/swissBOUNDARIES3D_1_3_TLM_KANTONSGEBIET.shp") %>%
   st_set_crs(2056) %>%
   dplyr::group_by(NAME,KANTONSNUM) %>%
   summarise(
@@ -57,11 +57,29 @@ usethis::use_data(kantonsgebiet, overwrite = TRUE,compress = "xz")
 ## Land ########################################################################
 ################################################################################
 
-
-
-landesgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_LANDESGEBIET.shp") %>%
+landesgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_LANDESGEBIET/swissBOUNDARIES3D_1_3_TLM_LANDESGEBIET.shp") %>%
   st_set_crs(2056) %>%
   dplyr::select(NAME,EINWOHNERZ,LANDESFLAE) %>%
   st_zm(NULL)
 
 usethis::use_data(landesgebiet, overwrite = TRUE,compress = "xz")
+
+
+################################################################################
+## Seen ########################################################################
+################################################################################
+
+big_lakes <- c("Le Léman","Bodensee","Lac de Neuchâtel","Lago Maggiore","Vierwaldstättersee","Zürichsee","Untersee")
+
+seen <- read_sf("data-raw/22_DKM500_GEWAESSER_PLY/22_DKM500_GEWAESSER_PLY.shp") %>%
+  st_set_crs(2056) %>%
+  filter(NAMN1 %in% big_lakes) %>%
+  dplyr::select(NAMN1,GROESSTE_S,SEESPIEGEL,NLN1)
+
+
+usethis::use_data(seen, overwrite = TRUE,compress = "xz")
+
+
+
+
+
