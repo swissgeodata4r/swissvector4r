@@ -1,6 +1,7 @@
 #' Country border (Polygons)
 #'
-#' Manipulated data from the Swissboundries3D dataset by \href{http://swisstopo.ch}{swisstopo.}
+#' Manipulated data from the Swissboundries3D dataset by \href{http://swisstopo.ch}
+#' {swisstopo.}
 #' 
 #' Manipulation: 
 #' \enumerate{
@@ -20,7 +21,9 @@
 
 #' Canton border (Polygons)
 #'
-#' Manipulated data from the Swissboundries3D dataset by \href{http://swisstopo.ch}{swisstopo.}
+#' Manipulated data from the Swissboundries3D dataset by \href{http://swisstopo.ch}
+#' {swisstopo.}
+#' 
 #' Manipulation: 
 #' \enumerate{
 #'   \item Removed z-Values
@@ -51,6 +54,7 @@
 #' District border (Polygons)
 #'
 #' Manipulated data from the Swissboundries3D dataset by \href{http://swisstopo.ch}{swisstopo.}
+#' 
 #' Manipulation: 
 #' \enumerate{
 #'   \item Removed z-Values
@@ -72,6 +76,7 @@
 #' Municipality border (Polygons)
 #'
 #' Manipulated data from the Swissboundries3D dataset by \href{http://swisstopo.ch}{swisstopo.}
+#' 
 #' Manipulation: 
 #' \enumerate{
 #'   \item Removed z-Values
@@ -93,7 +98,7 @@
 #' @source \url{https://shop.swisstopo.admin.ch/de/products/landscape/boundaries3D}
 "gemeindegebiet"
 
-#' Lakes (1:500'000 Swiss Vector Map)
+#' Lakes (Polygons)
 #'
 #' Manipulated data from the Swiss Map Vector 500 dataset by 
 #' \href{http://swisstopo.ch}{swisstopo}.

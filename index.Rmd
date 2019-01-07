@@ -24,6 +24,7 @@ library(swissvector4r)
 
 library(sf)
 library(ggplot2)
+library(dplyr)
 ```
 
 ### Plot the data
@@ -44,7 +45,7 @@ data("landesgebiet")
 
 ggplot(landesgebiet) +
   geom_sf() +
-  geom_sf(data = seen, fill = "deepskyblue3")
+  geom_sf(data = seen %>% arrange(desc(SHP_AREA)) %>% head(7), fill = "deepskyblue3")
 
 ```
 
