@@ -10,7 +10,8 @@ require(dplyr)
 
 bezirksgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_BEZIRKSGEBIET/swissBOUNDARIES3D_1_3_TLM_BEZIRKSGEBIET.shp") %>%
   st_set_crs(2056) %>%
-  dplyr::select(NAME,BEZIRKSNUM,KANTONSNUM,EINWOHNERZ)
+  dplyr::select(NAME,BEZIRKSNUM,KANTONSNUM,EINWOHNERZ,BEZIRKSFLA) %>%
+  st_zm(NULL)
 
 usethis::use_data(bezirksgebiet, overwrite = TRUE,compress = "xz")
 
@@ -69,13 +70,16 @@ usethis::use_data(landesgebiet, overwrite = TRUE,compress = "xz")
 ## Seen ########################################################################
 ################################################################################
 
-big_lakes <- c("Le Léman","Bodensee","Lac de Neuchâtel","Lago Maggiore","Vierwaldstättersee","Zürichsee","Untersee")
-
 seen <- read_sf("data-raw/22_DKM500_GEWAESSER_PLY/22_DKM500_GEWAESSER_PLY.shp") %>%
-  st_set_crs(2056) %>%
-  filter(NAMN1 %in% big_lakes) %>%
-  dplyr::select(NAMN1,GROESSTE_S,SEESPIEGEL,NLN1)
-
+  st_set_crs(2056) %>% 
+  sf::st_join(
+    landesgebiet %>% 
+      mutate(j = T) %>% 
+      select(j),
+    join = st_intersects
+  ) %>% 
+  filter(j) %>%
+  dplyr::select(NAMN1,GROESSTE_S,SEESPIEGEL,NLN1,SHP_AREA)
 
 usethis::use_data(seen, overwrite = TRUE,compress = "xz")
 

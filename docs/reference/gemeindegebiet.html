@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Authors • swissvector4r</title>
+<title>Municipality border (Polygons) — gemeindegebiet • swissvector4r</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -25,12 +25,21 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Authors" />
+<meta property="og:title" content="Municipality border (Polygons) — gemeindegebiet" />
+
+<meta property="og:description" content="Manipulated data from the Swissboundries3D dataset by swisstopo.
+Manipulation:
+Removed z-Values
+Dropped some columns
+Singlepart to multipart (summarise.sf corresponds to
+        st_union?)
+" />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +56,7 @@
   </head>
 
   <body>
-    <div class="container template-authors">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -59,7 +68,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">swissvector4r</a>
+        <a class="navbar-link" href="../index.html">swissvector4r</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
@@ -67,13 +76,13 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       
@@ -94,22 +103,56 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Authors</h1>
+    <h1>Municipality border (Polygons)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/swissgeodata4r/swissrastermaps4r/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
+    <div class="hidden name"><code>gemeindegebiet.Rd</code></div>
     </div>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong>Nils Ratnaweera</strong>. Maintainer. 
-        </p>
-      </li>
-    </ul>
+    <div class="ref-description">
+    
+    <p>Manipulated data from the Swissboundries3D dataset by <a href='http://swisstopo.ch'>swisstopo.</a>
+Manipulation:</p><ol>
+<li><p>Removed z-Values</p></li>
+<li><p>Dropped some columns</p></li>
+<li><p>Singlepart to multipart (<code><a href='https://www.rdocumentation.org/packages/sf/topics/tidyverse'>summarise.sf</a></code> corresponds to
+        <code><a href='https://www.rdocumentation.org/packages/sf/topics/geos_combine'>st_union</a></code>?)</p></li>
+</ol>
+    
+    </div>
+
+    <pre class="usage"><span class='no'>gemeindegebiet</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>An <code>sf</code> object containing polygon data with four features.</p><dl class='dl-horizontal'>
+  <dt>NAME</dt><dd><p>Name of the country</p></dd>
+  <dt>BEZIRKSNUM</dt><dd><p>Official district number</p></dd>
+  <dt>KANTONSNUM</dt><dd><p>Official number of canton</p></dd>
+  <dt>BFS_NUMMER</dt><dd><p>Number of the Swiss official commune register</p></dd>
+  <dt>EINWOHNERZ</dt><dd><p>Number of inhabitants</p></dd>
+  <dt>GEM_FLAECH</dt><dd><p>Area</p></dd>
+  <dt>geometry</dt><dd><p>sfc_POLYGON  data in EPSG 2056</p></dd>
+</dl>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p><a href='https://shop.swisstopo.admin.ch/de/products/landscape/boundaries3D'>https://shop.swisstopo.admin.ch/de/products/landscape/boundaries3D</a></p>
+    
 
   </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      
+      <li><a href="#format">Format</a></li>
 
+      <li><a href="#source">Source</a></li>
+          </ul>
+
+  </div>
 </div>
-
 
       <footer>
       <div class="copyright">

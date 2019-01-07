@@ -1,0 +1,58 @@
+---
+title: "Package swissvectormaps4r"
+subtitle: "(Package Name under construction)"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## What is this package about?
+
+I've developed this package to provide myself with a fast access to open vector data which I use frequently. I usually use this data to bring context to other data that I need to visualize. Check the reference section to see some metadata.
+
+## How does this package work?
+
+### Load the necessary packages
+
+```{r,message=F}
+# devtools::install_github("swissgeodata4r/swissvector4r")
+
+library(swissvector4r) 
+
+library(sf)
+library(ggplot2)
+```
+
+### Plot the data
+```{r}
+data("kantonsgebiet")
+
+
+ggplot(kantonsgebiet, aes(fill = Beitritt)) + 
+  geom_sf() + 
+  scale_fill_viridis_c() +
+  coord_sf(datum = 2056)
+
+```
+
+```{r}
+data("seen")
+data("landesgebiet")
+
+ggplot(landesgebiet) +
+  geom_sf() +
+  geom_sf(data = seen, fill = "deepskyblue3")
+
+```
+
+
+
+
+
+## Who's in the team?
+
+Currently, it's just [me](https://www.zhaw.ch/de/ueber-uns/person/rata/), but I'm very open to collaboration.
+

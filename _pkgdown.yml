@@ -1,0 +1,12 @@
+reference:
+- title: swissTLM3D
+  desc: swissTLM3D is the large-scale topographic landscape model of Switzerland. #Source: [swissTLM3D](https://shop.swisstopo.admin.ch/en/products/landscape/tlm3D)
+  contents:
+  - '`bezirksgebiet`'
+  - '`gemeindegebiet`'
+  - '`kantonsgebiet`'
+  - '`landesgebiet`'
+- title: SwissMapVector500
+  desc: Swiss Map Vector 500 is the Swiss national 1:500,000 scale map in vector format. #Source: [smv500](https://shop.swisstopo.admin.ch/en/products/maps/national/digital/smv500)
+  contents:
+  - '`seen`'

@@ -4,11 +4,14 @@ Title: Easy access to swiss vector data
 Version: 0.1.1
 Author: Nils Ratnaweera
 Maintainer: Nils Ratnaweera <rata@zhaw.ch>
-Description: This package servers to make the Swissboundries3D dataset by swisstopo 
-    available through R. When using this data, you are agreeing to 
-    \href{https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienste/geodienst-gratis.html}{the swisstopo user agreement}
-License: \href{https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienste/geodienst-gratis.html}{Swisstopo User Agreement}
+Description: This package makes swiss vector data easily accessible with R. 
+    When using this data, you are agreeing to https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienste/geodienst-gratis.html{the swisstopo user agreement}
+License: https://www.swisstopo.admin.ch/de/home/meta/konditionen/geodienste/geodienst-gratis.html
 Encoding: UTF-8
+URL: https://github.com/swissgeodata4r/swissrastermaps4r/
+BugReports: https://github.com/swissgeodata4r/swissrastermaps4r/issues
 LazyData: true
 Imports:
+Suggests:
+    sf
 RoxygenNote: 6.1.1

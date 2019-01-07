@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Authors • swissvector4r</title>
+<title>Lakes (1:500'000 Swiss Vector Map) — seen • swissvector4r</title>
 
 <!-- jquery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
@@ -25,12 +25,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sticky-kit/1.1.3/sticky-kit.min.js" integrity="sha256-c4Rlo1ZozqTPE2RLuvbusY3+SU1pQaJC0TjuhygMipw=" crossorigin="anonymous"></script>
 
 <!-- pkgdown -->
-<link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script>
+<link href="../pkgdown.css" rel="stylesheet">
+<script src="../pkgdown.js"></script>
 
 
 
-<meta property="og:title" content="Authors" />
+<meta property="og:title" content="Lakes (1:500'000 Swiss Vector Map) — seen" />
+
+<meta property="og:description" content="Manipulated data from the Swiss Map Vector 500 dataset by 
+swisstopo." />
+<meta name="twitter:card" content="summary" />
 
 
 
@@ -47,7 +51,7 @@
   </head>
 
   <body>
-    <div class="container template-authors">
+    <div class="container template-reference-topic">
       <header>
       <div class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
@@ -59,7 +63,7 @@
         <span class="icon-bar"></span>
       </button>
       <span class="navbar-brand">
-        <a class="navbar-link" href="index.html">swissvector4r</a>
+        <a class="navbar-link" href="../index.html">swissvector4r</a>
         <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
@@ -67,13 +71,13 @@
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
         <li>
-  <a href="index.html">
+  <a href="../index.html">
     <span class="fa fa-home fa-lg"></span>
      
   </a>
 </li>
 <li>
-  <a href="reference/index.html">Reference</a>
+  <a href="../reference/index.html">Reference</a>
 </li>
       </ul>
       
@@ -94,22 +98,59 @@
       </header>
 
 <div class="row">
-  <div class="contents col-md-9">
+  <div class="col-md-9 contents">
     <div class="page-header">
-      <h1>Authors</h1>
+    <h1>Lakes (1:500'000 Swiss Vector Map)</h1>
+    <small class="dont-index">Source: <a href='https://github.com/swissgeodata4r/swissrastermaps4r/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
+    <div class="hidden name"><code>seen.Rd</code></div>
     </div>
 
-    <ul class="list-unstyled">
-      <li>
-        <p><strong>Nils Ratnaweera</strong>. Maintainer. 
-        </p>
-      </li>
-    </ul>
+    <div class="ref-description">
+    
+    <p>Manipulated data from the Swiss Map Vector 500 dataset by 
+<a href='http://swisstopo.ch'>swisstopo</a>.</p>
+    
+    </div>
+
+    <pre class="usage"><span class='no'>seen</span></pre>
+        
+    <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
+
+    <p>An <code>sf</code> object containing polygon data with following attributes</p><dl class='dl-horizontal'>
+  <dt>NAMN1</dt><dd><p>Name of the Lake in the respective official language (see NLN1)</p></dd>
+  <dt>GROESSTE_S</dt><dd><p>Probabbly greatest depth</p></dd>
+  <dt>SEESPIEGEL</dt><dd><p>Probabbly elevelation of lake level</p></dd>
+  <dt>NLN1</dt><dd><p>Language</p></dd>
+  <dt>SHP_AREA</dt><dd><p>Area in m2</p></dd>
+  <dt>geometry</dt><dd><p>sfc_POLYGON  data in EPSG 2056</p></dd>
+</dl>
+    
+    <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
+
+    <p><a href='https://shop.swisstopo.admin.ch/en/products/maps/national/digital/smv500'>https://shop.swisstopo.admin.ch/en/products/maps/national/digital/smv500</a></p>
+    
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Manipulation:</p><ol>
+<li><p>Dropped some columns</p></li>
+<li><p>selected lakes <em>within</em> switzland (<code><a href='https://www.rdocumentation.org/packages/sf/topics/geos_binary_pred'>st_intersects</a></code>)</p></li>
+</ol>
+    
 
   </div>
+  <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
+    <h2>Contents</h2>
+    <ul class="nav nav-pills nav-stacked">
+      
+      <li><a href="#format">Format</a></li>
 
+      <li><a href="#source">Source</a></li>
+
+      <li><a href="#details">Details</a></li>
+          </ul>
+
+  </div>
 </div>
-
 
       <footer>
       <div class="copyright">
