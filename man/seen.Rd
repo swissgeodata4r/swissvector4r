@@ -3,7 +3,7 @@
 \docType{data}
 \name{seen}
 \alias{seen}
-\title{Lakes (1:500'000 Swiss Vector Map)}
+\title{Lakes (Polygons)}
 \format{An \code{sf} object containing polygon data with following attributes
 \describe{
   \item{NAMN1}{Name of the Lake in the respective official language (see NLN1)}

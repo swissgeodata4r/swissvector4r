@@ -26,7 +26,10 @@
 kantonsgebiet
 }
 \description{
-Manipulated data from the Swissboundries3D dataset by \href{http://swisstopo.ch}{swisstopo.}
+Manipulated data from the Swissboundries3D dataset by \href{http://swisstopo.ch}
+{swisstopo.}
+}
+\details{
 Manipulation: 
 \enumerate{
   \item Removed z-Values

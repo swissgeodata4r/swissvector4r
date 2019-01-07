@@ -32,13 +32,7 @@
 
 <meta property="og:title" content="Municipality border (Polygons) — gemeindegebiet" />
 
-<meta property="og:description" content="Manipulated data from the Swissboundries3D dataset by swisstopo.
-Manipulation:
-Removed z-Values
-Dropped some columns
-Singlepart to multipart (summarise.sf corresponds to
-        st_union?)
-" />
+<meta property="og:description" content="Manipulated data from the Swissboundries3D dataset by swisstopo." />
 <meta name="twitter:card" content="summary" />
 
 
@@ -88,7 +82,7 @@ Singlepart to multipart (summarise.sf corresponds to
       
       <ul class="nav navbar-nav navbar-right">
         <li>
-  <a href="https://github.com/swissgeodata4r/swissrastermaps4r">
+  <a href="https://github.com/swissgeodata4r/swissvector4r">
     <span class="fa fa-github fa-lg"></span>
      
   </a>
@@ -106,19 +100,13 @@ Singlepart to multipart (summarise.sf corresponds to
   <div class="col-md-9 contents">
     <div class="page-header">
     <h1>Municipality border (Polygons)</h1>
-    <small class="dont-index">Source: <a href='https://github.com/swissgeodata4r/swissrastermaps4r/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
+    <small class="dont-index">Source: <a href='https://github.com/swissgeodata4r/swissvector4r/blob/master/R/data_documentation.R'><code>R/data_documentation.R</code></a></small>
     <div class="hidden name"><code>gemeindegebiet.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>Manipulated data from the Swissboundries3D dataset by <a href='http://swisstopo.ch'>swisstopo.</a>
-Manipulation:</p><ol>
-<li><p>Removed z-Values</p></li>
-<li><p>Dropped some columns</p></li>
-<li><p>Singlepart to multipart (<code><a href='https://www.rdocumentation.org/packages/sf/topics/tidyverse'>summarise.sf</a></code> corresponds to
-        <code><a href='https://www.rdocumentation.org/packages/sf/topics/geos_combine'>st_union</a></code>?)</p></li>
-</ol>
+    <p>Manipulated data from the Swissboundries3D dataset by <a href='http://swisstopo.ch'>swisstopo.</a></p>
     
     </div>
 
@@ -140,6 +128,15 @@ Manipulation:</p><ol>
 
     <p><a href='https://shop.swisstopo.admin.ch/de/products/landscape/boundaries3D'>https://shop.swisstopo.admin.ch/de/products/landscape/boundaries3D</a></p>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>Manipulation:</p><ol>
+<li><p>Removed z-Values</p></li>
+<li><p>Dropped some columns</p></li>
+<li><p>Singlepart to multipart (<code><a href='https://www.rdocumentation.org/packages/sf/topics/tidyverse'>summarise.sf</a></code> corresponds to
+        <code><a href='https://www.rdocumentation.org/packages/sf/topics/geos_combine'>st_union</a></code>?)</p></li>
+</ol>
+    
 
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
@@ -149,6 +146,8 @@ Manipulation:</p><ol>
       <li><a href="#format">Format</a></li>
 
       <li><a href="#source">Source</a></li>
+
+      <li><a href="#details">Details</a></li>
           </ul>
 
   </div>
