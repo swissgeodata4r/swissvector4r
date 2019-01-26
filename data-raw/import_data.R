@@ -89,7 +89,8 @@ usethis::use_data(seen, overwrite = TRUE,compress = "xz")
 ## DKM1M Hoheitsgebiet #########################################################
 ################################################################################
 
-# 
+# ended this venture since i dont know how to cleanly select only swiss data
+
 # hoheitsgebiet <- sf::read_sf("data-raw/DKM1M_HOHEITSGEBIET/DKM1M_HOHEITSGEBIET.shp") %>%
 #   st_set_crs(2056)
 # 
