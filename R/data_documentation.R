@@ -106,7 +106,7 @@
 #' Manipulation: 
 #' \enumerate{
 #'   \item Dropped some columns
-#'   \item selected lakes \emph{within} switzland (\code{\link[sf]{st_intersects}})
+#'   \item Selected lakes \emph{within} switzerland (\code{\link[sf]{st_intersects}})
 #' } 
 #' 
 #' @format An \code{sf} object containing polygon data with following attributes

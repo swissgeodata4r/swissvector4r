@@ -42,11 +42,11 @@ kantone_meta <- readr::read_delim("data-raw/kantone_meta.csv",delim = ";")
 
 kantonsgebiet <- sf::read_sf("data-raw/swissBOUNDARIES3D_1_3_TLM_KANTONSGEBIET/swissBOUNDARIES3D_1_3_TLM_KANTONSGEBIET.shp") %>%
   st_set_crs(2056) %>%
-  dplyr::group_by(NAME,KANTONSNUM) %>%
-  summarise(
-    EINWOHNERZ = sum(EINWOHNERZ,na.rm = T),
-    KANTONSFLA = sum(KANTONSFLA,na.rm = T)
-    ) %>%
+  # dplyr::group_by(NAME,KANTONSNUM) %>%
+  # summarise(
+  #   EINWOHNERZ = sum(EINWOHNERZ,na.rm = T),
+  #   KANTONSFLA = sum(KANTONSFLA,na.rm = T)
+  #   ) %>%
   dplyr::left_join(kantone_meta, by = c("KANTONSNUM" = "Kantonsnummer")) %>%
   st_zm(NULL)
 
@@ -82,6 +82,23 @@ seen <- read_sf("data-raw/22_DKM500_GEWAESSER_PLY/22_DKM500_GEWAESSER_PLY.shp") 
   dplyr::select(NAMN1,GROESSTE_S,SEESPIEGEL,NLN1,SHP_AREA)
 
 usethis::use_data(seen, overwrite = TRUE,compress = "xz")
+
+
+
+################################################################################
+## DKM1M Hoheitsgebiet #########################################################
+################################################################################
+
+# 
+# hoheitsgebiet <- sf::read_sf("data-raw/DKM1M_HOHEITSGEBIET/DKM1M_HOHEITSGEBIET.shp") %>%
+#   st_set_crs(2056)
+# 
+# hoheitsgebiet %>%
+#   filter(OBJEKTART == "HG Kanton") %>%
+#   st_set_geometry(NULL) %>% View()
+#   ggplot() + geom_sf(aes(fill = BESCHRIFTE))
+  
+
 
 
 
